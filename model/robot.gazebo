@@ -44,11 +44,8 @@
 
         <update_rate>50</update_rate>
 
-        <!-- ONLY ONE LEFT -->
-        <left_joint>wheel2_joint</left_joint>
-        <!-- ONLY ONE RIGHT -->
-        <right_joint>wheel1_joint</right_joint>
-
+      <left_joint>wheel4_joint</left_joint>
+      <right_joint>wheel3_joint</right_joint>
         <wheel_separation>
             ${body_link_y_dim + wheel_link_length}
         </wheel_separation>
