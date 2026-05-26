@@ -12,7 +12,7 @@ from tf_transformations import euler_from_quaternion
 
 
 TOPIC_CMD = '/cmd_vel'
-TOPIC_ODOM = '/odom'
+TOPIC_ODOM = '/odom1'
 TOPIC_SCAN = '/scan'
 
 
@@ -225,6 +225,12 @@ class ControllerNode(Node):
         self.cmd_pub.publish(
             self.control_vel
         )
+        
+        self.get_logger().info(
+    f"x={x:.2f} "
+    f"y={y:.2f} "
+    f"theta={theta:.2f}"
+)
 
 
 def main(args=None):
@@ -234,10 +240,10 @@ def main(args=None):
     node = ControllerNode(
         xd=10.0,
         yd=-10.0,
-        ka=0.3,
-        kr=10.0,
+        ka=0.5,
+        kr=5.0,
         ktheta=4.0,
-        gstar=4.0,
+        gstar=2.0,
         eps_orient=np.pi/10,
         eps_control=0.2
     )
